@@ -13,7 +13,12 @@ function fetchBreeds(){
 }
 
 function selectBreedsStartingWith(letter){
-  updateBreedList()
+  updateBreedList(breeds.filter(breed => breed.startsWith(letter)));
+}
+
+function updateBreedList(breeds) {
+  let ul = documet.querySelector('dog-breeds');
+  breeds.forEach(breed => listItems(breed));
 }
 
 function renderBreeds(json) {
