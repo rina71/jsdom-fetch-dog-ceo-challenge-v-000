@@ -14,12 +14,12 @@ function fetchBreeds(){
 function renderBreeds(json) {
   const dropdown = document.getElementById('breed-dropdown');
   const breeds  = Object.keys(json.message);
-  let newBreeds = dropdown.setAttribute("onchange", function(){
-    breeds.filter(item => {
-      return item.slice(0,1) === dropdown.value;
-  });
-});
-    listItems(newBreeds);
+//   let newBreeds = dropdown.setAttribute("onchange", function(){
+//     breeds.filter(item => {
+//       return item.slice(0,1) === dropdown.value;
+//   });
+// });
+    listItems(breeds);
 }
 
 
