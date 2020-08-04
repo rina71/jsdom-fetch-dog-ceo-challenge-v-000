@@ -1,4 +1,5 @@
 console.log('%c HI', 'color: firebrick')
+let breeds = [];
 function fetchDogs() {
   return fetch("https://dog.ceo/api/breeds/image/random/4")
   .then(resp => resp.json())
@@ -11,9 +12,16 @@ function fetchBreeds(){
   .then(json => renderBreeds(json));
 }
 
+function selectBreedsStartingWith(letter){
+  updateBreedList()
+}
+
 function renderBreeds(json) {
   const dropdown = document.getElementById('breed-dropdown');
-  const breeds  = Object.keys(json.message);
+  let breeds  = Object.keys(json.message);
+  dropdown.addEventListener('change', function(event){
+    selectBreedsStartingWith(event.target.value);
+  });
 //   let newBreeds = dropdown.setAttribute("onchange", function(){
 //     breeds.filter(item => {
 //       return item.slice(0,1) === dropdown.value;
