@@ -17,7 +17,7 @@ function selectBreedsStartingWith(letter){
 }
 
 function updateBreedList(breeds) {
-  let ul = documet.querySelector('dog-breeds');
+  let ul = document.querySelector('dog-breeds');
   breeds.forEach(breed => listItems(breed));
 }
 
